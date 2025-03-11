@@ -1,15 +1,16 @@
 # rs-grpc
 
+You'll need to have rust installed to build and run the rust server / client.
 To install dependencies:
 
 ```bash
+# Failed to get this to work without installing this dependency globally
+npm install -g protoc-gen-js
 bun install
 ```
 
 To run:
 
 ```bash
-bun run index.ts
+bun serve.ts
 ```
-
-This project was created using `bun init` in bun v1.2.3. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.

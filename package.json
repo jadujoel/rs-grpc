@@ -1,0 +1,18 @@
+{
+  "name": "rs-grpc",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "bun-types": "1.2.5",
+    "protoc-gen-grpc-web": "1.5.0",
+    "google-protobuf": "3.21.4"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "grpc-web": "1.5.0"
+  }
+}

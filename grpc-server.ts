@@ -69,7 +69,7 @@ export async function startGrpcServer() {
 
   // Define handlers and response classes for Greeter service
   const greeterHandlers = {
-    sayHello: (request: proto.main.HelloRequest) => ({ message: `Hello ${request.name}!` }),
+    sayHello: (request: proto.main.HelloRequest) => ({ message: `Hello ${request.name}! I am typescript backend.` }),
     sayGoodbye: (request: proto.main.GoodbyeRequest) => new GoodbyeError(),
   };
 

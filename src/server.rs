@@ -18,12 +18,10 @@ impl Greeter for MyGreeter {
         &self,
         request: Request<HelloRequest>,
     ) -> Result<Response<HelloResponse>, Status> {
-        // Log the request body for debugging
-        println!("Received HelloRequest: {:?}", request);
-
         let name = request.into_inner().name;
+        println!("Received HelloRequest: {name}");
         let reply = HelloResponse {
-            message: format!("Hello, {name}!"),
+            message: format!("Hello, {name}! I am Rust Backend."),
         };
         Ok(Response::new(reply))
     }
@@ -33,11 +31,10 @@ impl Greeter for MyGreeter {
         request: Request<GoodbyeRequest>,
     ) -> Result<Response<GoodbyeResponse>, Status> {
         // Log the request body for debugging
-        println!("Received GoodbyeRequest: {:?}", request);
-
         let name = request.into_inner().name;
+        println!("Received GoodbyeRequest: {name}");
         let reply = GoodbyeResponse {
-            message: format!("Goodbye, {name}!"),
+            message: format!("Goodbye from Rust backend to you, {name}!"),
         };
         Ok(Response::new(reply))
     }
@@ -53,8 +50,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let svc = GreeterServer::new(greeter);
 
     Server::builder()
-        // Important for gRPC-Web
-        .accept_http1(true)
+        .accept_http1(true) // Necessary for gRPC-Web
         .layer(
             CorsLayer::new()
                 .allow_origin(AllowOrigin::mirror_request())

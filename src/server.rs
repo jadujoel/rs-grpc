@@ -52,10 +52,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let svc = GreeterServer::new(greeter);
 
-    // Start the server with the layers applied
     Server::builder()
-        .accept_http1(true) // Important for gRPC-Web
-        // .layer(service_stack) // Add layers
+        // Important for gRPC-Web
+        .accept_http1(true)
         .layer(
             CorsLayer::new()
                 .allow_origin(AllowOrigin::mirror_request())

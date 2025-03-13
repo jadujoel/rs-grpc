@@ -70,7 +70,6 @@ export async function startGrpcServer() {
   // Define handlers and response classes for Greeter service
   const greeterHandlers = {
     sayHello: (request: proto.main.HelloRequest) => ({ message: `Hello ${request.name}!` }),
-    // sayGoodbye: (request: proto.main.GoodbyeRequest) => ({ message: `Goodbye ${request.name}` }),
     sayGoodbye: (request: proto.main.GoodbyeRequest) => new GoodbyeError(),
   };
 
@@ -87,7 +86,6 @@ export async function startGrpcServer() {
   const heaterResponseClasses = {
     turnOn: proto.main.TurnOnResponse,
   };
-
 
   // Create procedure implementations using the higher-order function
   const greeterProcedures = createProcedureImplementations(greeterHandlers, greeterResponseClasses as any);

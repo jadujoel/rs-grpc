@@ -12,7 +12,7 @@ export async function serve() {
   })
 
   console.log(`Http Server listening on ${server.url.href}`)
-  await Bun.$`cargo run --bin server`
+  await Bun.$`cargo run --bin server`.catch(console.log)
 }
 
 if (import.meta.main) {

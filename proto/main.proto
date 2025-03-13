@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package main;
+
+service Greeter {
+  rpc sayHello (HelloRequest) returns (HelloResponse);
+  rpc sayGoodbye (GoodbyeRequest) returns (GoodbyeResponse);
+}
+
+service Heater {
+  rpc turnOn (TurnOnRequest) returns (TurnOnResponse);
+}
+
+message TurnOnRequest {
+  float when = 1;
+}
+
+message TurnOnResponse {
+  bool success = 1;
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloResponse {
+  string message = 1;
+}
+
+message GoodbyeRequest {
+  string name = 1;
+}
+
+message GoodbyeResponse {
+  string message = 1;
+}

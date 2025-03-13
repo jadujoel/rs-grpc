@@ -3,4 +3,5 @@
 /dist
 /unused
 /src/generated
+/gen
 bun.lock

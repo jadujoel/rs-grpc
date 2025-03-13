@@ -1,8 +1,8 @@
-use hello::greeter_client::GreeterClient;
-use hello::HelloRequest;
+use main::greeter_client::GreeterClient;
+use main::HelloRequest;
 
-pub mod hello {
-    tonic::include_proto!("hello");
+pub mod main {
+    tonic::include_proto!("main");
 }
 
 #[tokio::main]

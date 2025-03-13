@@ -1,5 +1,5 @@
-import service from './generated/hello_pb';
-import * as clients from "./generated/HelloServiceClientPb"
+import service from './generated/main_pb';
+import * as clients from "./generated/MainServiceClientPb"
 
 export const client = new clients.GreeterClient("http://127.0.0.1:50051/");
 

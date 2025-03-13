@@ -2,11 +2,11 @@ use tonic::{transport::Server, Request, Response, Status};
 use tonic_web::GrpcWebLayer;
 use tower_http::cors::{AllowHeaders, AllowOrigin, CorsLayer, ExposeHeaders};
 
-use hello::greeter_server::{Greeter, GreeterServer};
-use hello::{HelloRequest, HelloResponse, GoodbyeResponse, GoodbyeRequest};
+use main::greeter_server::{Greeter, GreeterServer};
+use main::{HelloRequest, HelloResponse, GoodbyeResponse, GoodbyeRequest};
 
-pub mod hello {
-    tonic::include_proto!("hello");
+pub mod main {
+    tonic::include_proto!("main");
 }
 
 #[derive(Default)]
